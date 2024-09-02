@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Digital Rhombus Studios PVT LTD</title>
+    <meta charset="utf-8">
+    <meta name="description" content="<model-viewer> template">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <script src="scripts/jquery-1.11.1.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <!-- THREE.js must be supplied -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js"></script>
+
+    <!-- client code -->
+    <script src="https://aka.ms/csspeech/jsbrowserpackageraw">
+
+
+      function showSettingsIcon() {
+        const settingIconDiv = document.getElementById('setting-icon');
+        const children = settingIconDiv.children;
+        // Show the setting-icon div
+        settingIconDiv.style.display = 'block';
+          // Hide all children except the close button
+          for (let i = 0; i < children.length; i++)
+            {
+                if (children[i].id !== 'menu-close')
+                    {
+                        children[i].style.display = 'none';
+                    }
+                        else {
+                            children[i].style.display = 'none';
+                        }
+            }
+      }
+
+
+    </script>
+  </head>
+  <body>
+
+    <!-- Migrated Code -->
+
+    <div class="main-content">
+      <div id="loadingModal1" class="modal" tabindex="-1" role="dialog" style="display: block;">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-header-load">
+                      <h5 class="modal-title-load">DRS Assistant</h5>
+                  </div>
+                  <div class="modal-body">
+                      <span>
+                          You have come to the most interactive offering technology has to offer today.
+                          <br>
+                          <br>
+                          The Digital Rhombus Studios assistant will help you understand about our services and capability.
+                          <br>
+                          <br>
+                          This will be a fun experience for you, and us!
+                      </span>
+                  </div>
+                  <div class="modal-footer-load">
+                      <button type="button" class="btn btn-primary next-button" data-next="loadingModal2">
+                          NEXT &gt;
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Second Modal -->
+      <div id="loadingModal2" class="modal" tabindex="-1" role="dialog" style="display: none;">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-header-load">
+                      <h5 class="modal-title-load">Guide</h5>
+                  </div>
+                  <div class="modal-body">
+                      <div id="icon-container">
+                          <div id="place-icon" class="icon-item" style="align-items: center;">
+                              <img id="place" src="images/place.png">
+                              <div style="color: #fff;">
+                                  <span style="color: #fff;">Tap to Place</span>
+                              </div>
+                          </div>
+                          <div id="swipe-icon" class="icon-item" style="align-items: center;">
+                              <img id="swipe" src="images/swipe.png">
+                              <div style="color: #fff;">
+                                  <span style="color: #fff;">Swipe to Rotate</span>
+                              </div>
+                          </div>
+                          <div id="pinch-icon" class="icon-item" style="align-items: center;">
+                              <img id="pinch" src="images/pinch.png">
+                              <div style="color: #fff;">
+                                  <span style="color: #fff;">Pinch to Resize</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer-load">
+                      <button type="button" class="btn btn-primary next-button" data-next="loadingModal3">
+                          NEXT &gt;
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Third Modal -->
+      <div id="loadingModal3" class="modal" tabindex="-1" role="dialog" style="display: none;">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-header-load">
+                      <h5 class="modal-title-load">Guide</h5>
+                  </div>
+                  <div class="modal-body">
+                      <span>Tap anywhere on the floor to spawn the virtual assistant!</span>
+                  </div>
+                  <div class="modal-footer-load">
+                      <button type="button" class="btn next-button" data-next="done" id="start-button" data-dismiss="start-modal">
+                          START &gt;
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+    <!-- Migrated Code -->
+
+    <!-- <model-viewer> HTML element -->
+    <model-viewer id="model-viewer" src="Camila.glb" environment-image="modern_bathroom_1k.hdr" camera-target="-0.8m 1.1m" camera-orbit="0deg 90deg 4m" ar="" ar-modes="webxr scene-viewer quick-look" disable-zoom="" interaction-prompt="none" tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" shadow-softness="1" autoplay>
+      <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+        View in your space
+      </button>
+      <div id="ar-prompt">
+        <img src="ar_hand_prompt.png">
+      </div>
+
+      <!-- Overlay Buttons -->
+      <!-- <div class="ar-buttons" id="ar-buttons" style="display: none;">
+        <label class="switch">
+          <input type="checkbox" id="toggle-animation">
+          <span class="slider round"></span>
+        </label>
+        <p id="waiting">Processing...</p>
+        <p id="Speaking">Speaking...</p>
+        <p id="recording">Recording start</p>
+        <img id="botIcon" src="" style="display: none;float: right;">
+        <img id="recBtn" src="images/recording.jpg" alt="recoring-button">
+        
+        <button id="change-color">Change Color</button>
+      </div>  -->
+      <!-- Chat Template -->
+        <div class="container-fluid h-100">
+            <div class="row justify-content-left h-100">		
+                <div class="col-md-8 col-xl-6 chat">
+                    <div class="card">
+                        <div id="messageFormeight" class="card-body msg_card_body">
+                            
+                            
+                        </div>
+                        <div class="card-footer">
+                            <form id="messageArea" class="input-group">
+                                <input type="text" id="text" name="msg" placeholder="Type your message..." autocomplete="off" class="form-control type_msg" required/>
+                                <div class="input-group-append">
+                                    <button type="submit" id="send" class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $("#messageArea").on("submit", function(event) {
+                    const date = new Date();
+                    const hour = date.getHours();
+                    const minute = date.getMinutes();
+                    const str_time = hour+":"+minute;
+                    var rawText = $("#text").val();
+    
+                    var userHtml = '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' + rawText + '<span class="msg_time_send">'+ str_time + '</span></div><div class="img_cont_msg"><img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" class="rounded-circle user_img_msg"></div></div>';
+                    
+                    $("#text").val("");
+                    $("#messageFormeight").append(userHtml);
+    
+                    $.ajax({
+                        data: {
+                            msg: rawText,	
+                        },
+                        type: "POST",
+                        url: "/get",
+                    }).done(function(data) {
+                        var botHtml = '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://www.prdistribution.com/spirit/uploads/pressreleases/2019/newsreleases/d83341deb75c4c4f6b113f27b1e42cd8-chatbot-florence-already-helps-thousands-of-patients-to-remember-their-medication.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer">' + data + '<span class="msg_time">' + str_time + '</span></div></div>';
+                        $("#messageFormeight").append($.parseHTML(botHtml));
+                    });
+                    event.preventDefault();
+                });
+            });
+        </script>
+       <!-- Chat Template -->
+       <!-- Migrated Code-->
+       <div id="responseText-area">
+        <p id="responseText"></p>
+         <!-- <input id="responseText" type="text" placeholder="Type a message" > -->
+        </div>
+        <div class="recording-area" id="recording-area">
+            <p id="waiting">Processing...</p>
+            <p id="Speaking">Speaking...</p>
+            <p id="recording">Recording start</p>
+            <img id="botIcon" src="" style="display: none;float: right;">
+            <img id="recBtn" src="images/recording.jpg" alt="recoring-button">
+        </div>
+        <svg id="menu-open" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-gear" viewBox="0 0 16 16">
+            <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
+            <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z" />
+        </svg> -->
+
+        <div class="Menu" id="menu">
+            <img src="images/Menu Icon.png">
+        </div>
+        <div class="Help" id="Help">
+            <img src="images/Help Icon.png" id="help-icon">
+        </div> 
+        <!-- Migrated Code -->
+    </model-viewer>
+    
+    <script src="script.js"></script>
+    <script src="scripts/speech.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+  </body>
+</html>
