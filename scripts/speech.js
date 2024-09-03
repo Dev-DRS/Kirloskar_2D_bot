@@ -294,8 +294,8 @@ $(document).ready(function() {
 
   const sendToChatGPT = (voiceInput) => {
       console.log("Sending to API");
-
-      const apiUrl = 'https://pythonappdrs.azurewebsites.net/chat';
+      //const apiUrl = 'pytestar.azurewebsites.net/chat'
+      const apiUrl = 'https://pytestar.azurewebsites.net/chat';
       const headers = {
           'Content-Type': 'application/json',
       };
